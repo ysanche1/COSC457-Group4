@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 2222891796829891133}
   - component: {fileID: -5344246407821421068}
   - component: {fileID: 1386702554427861888}
-  - component: {fileID: 1279467285106608600}
-  - component: {fileID: -3973164873616516237}
+  - component: {fileID: 5090081010348820302}
+  - component: {fileID: 5998287581585197}
   m_Layer: 0
   m_Name: Basic_add_card
   m_TagString: Untagged
@@ -90,6 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c20b022f77148c94caad28fbf662a249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Canvas: {fileID: 0}
 --- !u!114 &1386702554427861888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,7 +134,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!61 &1279467285106608600
+--- !u!61 &5090081010348820302
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,7 +147,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.19248962, y: 13.126049}
+  m_Offset: {x: 0.17959976, y: 14.864243}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -157,9 +158,9 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 93.91858, y: 73.01259}
+  m_Size: {x: 79.756355, y: 62.37496}
   m_EdgeRadius: 0
---- !u!50 &-3973164873616516237
+--- !u!50 &5998287581585197
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
