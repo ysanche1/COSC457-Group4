@@ -3,7 +3,15 @@ guid: c20b022f77148c94caad28fbf662a249
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - DropZone1: {fileID: 5542090045855710928, guid: b46f798362311a1429f282f90d8f5c07,
+      type: 3}
+  - DropZone2: {fileID: 5504094292862836989, guid: 79d7a6591c8649c4cb6278730a2a26af,
+      type: 3}
+  - DropZone3: {fileID: 516964472956150603, guid: ea4a1034a447bd244ac9755278655ee0,
+      type: 3}
+  - DropZone4: {fileID: 8619932640075291372, guid: 2dbfac0a5f442c047b88eaf73fccfe9b,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
