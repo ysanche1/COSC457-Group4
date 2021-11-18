@@ -5,6 +5,7 @@ using UnityEngine;
 public class DragDrop : MonoBehaviour
 {
     public GameObject Canvas;
+    public GameObject Button;
     private GameObject DropZone1, DropZone2, DropZone3, DropZone4;
 
     private bool isDragging = false;
@@ -21,6 +22,7 @@ public class DragDrop : MonoBehaviour
         DropZone2 = GameObject.Find("Plot_2_area");
         DropZone3 = GameObject.Find("Plot_3_area");
         DropZone4 = GameObject.Find("Plot_4_area");
+        Button = GameObject.Find("Draw_button");
 
     }
 
@@ -85,8 +87,8 @@ public class DragDrop : MonoBehaviour
                 Debug.Log("plot 4 +1");
 
             }
+            Button.GetComponent<Draw_button>().RemoveCardInHand();
             Destroy(gameObject);
-
 
         }
         else

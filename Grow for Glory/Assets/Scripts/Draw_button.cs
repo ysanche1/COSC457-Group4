@@ -8,12 +8,14 @@ public class Draw_button : MonoBehaviour
     public GameObject Card2;
     public GameObject PlayerArea;
 
+    private static int CardsInHand = 0;
+
     public void OnClick() 
     {
-        for (int i = 0; i < 5; i++)
-        {
+        while (CardsInHand < 5) {
             GameObject card = Instantiate(Card1, new Vector2(0, 0), Quaternion.identity); //Instantiate creates the game object in the scene
             card.transform.SetParent(PlayerArea.transform, false);
+            CardsInHand++;
         }
     }
 
@@ -26,5 +28,9 @@ public class Draw_button : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void RemoveCardInHand() {
+        CardsInHand -= 1;
     }
 }
