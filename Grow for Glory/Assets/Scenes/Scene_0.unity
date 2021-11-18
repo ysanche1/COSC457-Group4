@@ -1230,6 +1230,24 @@ PrefabInstance:
       propertyPath: PlayerArea
       value: 
       objectReference: {fileID: 1641679236}
+    - target: {fileID: 7525817992746422783, guid: daa29fb242e55f8408ce01d342c4bca4,
+        type: 3}
+      propertyPath: Card2
+      value: 
+      objectReference: {fileID: 2174789003577582837, guid: 6339a53afdccb58468907de19788706b,
+        type: 3}
+    - target: {fileID: 7525817992746422783, guid: daa29fb242e55f8408ce01d342c4bca4,
+        type: 3}
+      propertyPath: Card3
+      value: 
+      objectReference: {fileID: 4825797746142551514, guid: 1d1372178ee00fa47bf5ca77b3df7f8b,
+        type: 3}
+    - target: {fileID: 7525817992746422783, guid: daa29fb242e55f8408ce01d342c4bca4,
+        type: 3}
+      propertyPath: Card4
+      value: 
+      objectReference: {fileID: 8496752553464498563, guid: 553a9dceb16b0c546ba57ad2f2caf77a,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: daa29fb242e55f8408ce01d342c4bca4, type: 3}
 --- !u!1001 &9066593946639142569
