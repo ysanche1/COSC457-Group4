@@ -7,6 +7,7 @@ public class DragDrop : MonoBehaviour
     public GameObject Canvas;
     public GameObject Button;
     private GameObject DropZone1, DropZone2, DropZone3, DropZone4;
+    private GameObject manaBar;
 
     private bool isDragging = false;
     private GameObject startParent;
@@ -23,6 +24,7 @@ public class DragDrop : MonoBehaviour
         DropZone3 = GameObject.Find("Plot_3_area");
         DropZone4 = GameObject.Find("Plot_4_area");
         Button = GameObject.Find("Draw_button");
+        manaBar = GameObject.Find("newManaBar");
 
     }
 
@@ -70,22 +72,23 @@ public class DragDrop : MonoBehaviour
             if (dropZone == DropZone1)
             {
                 Debug.Log("plot 1 +1");
+                manaBar.GetComponent<Mana>().reduceMana(.1);
 
             }
             else if (dropZone == DropZone2)
             {
                 Debug.Log("plot 2 +1");
-
+                manaBar.GetComponent<Mana>().reduceMana(.1);
             }
             else if (dropZone == DropZone3)
             {
                 Debug.Log("plot 3 +1");
-
+                manaBar.GetComponent<Mana>().reduceMana(.1);
             }
             else if (dropZone == DropZone4)
             {
                 Debug.Log("plot 4 +1");
-
+                manaBar.GetComponent<Mana>().reduceMana(.1);
             }
             Button.GetComponent<Draw_button>().RemoveCardInHand();
             Destroy(gameObject);
