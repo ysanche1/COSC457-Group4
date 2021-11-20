@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DragDrop : MonoBehaviour
 {
@@ -8,23 +9,26 @@ public class DragDrop : MonoBehaviour
     public GameObject Button;
     private GameObject DropZone1, DropZone2, DropZone3, DropZone4;
     private GameObject manaBar;
-
+  
     private bool isDragging = false;
     private GameObject startParent;
     private Vector2 startPosition;
     private GameObject dropZone;
     private bool isOverDropZone;
 
+
+
     // Start is called before the first frame update
     void Start()
     {
         Canvas = GameObject.Find("Main_Canvas");
+        Button = GameObject.Find("Draw_button");
+        manaBar = GameObject.Find("newManaBar");
         DropZone1 = GameObject.Find("Plot_1_area");
         DropZone2 = GameObject.Find("Plot_2_area");
         DropZone3 = GameObject.Find("Plot_3_area");
         DropZone4 = GameObject.Find("Plot_4_area");
-        Button = GameObject.Find("Draw_button");
-        manaBar = GameObject.Find("newManaBar");
+
 
     }
 
@@ -32,6 +36,7 @@ public class DragDrop : MonoBehaviour
     {
         isOverDropZone = true;
         dropZone = collision.gameObject;
+     
         if (dropZone == DropZone1)
         {
             Debug.Log("plot 1");
@@ -48,6 +53,7 @@ public class DragDrop : MonoBehaviour
         {
             Debug.Log("plot 4");
         }
+        
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -68,27 +74,33 @@ public class DragDrop : MonoBehaviour
         isDragging = false;
         if (isOverDropZone)
         {
-
+           
+            
             if (dropZone == DropZone1)
             {
                 Debug.Log("plot 1 +1");
                 manaBar.GetComponent<Mana>().reduceMana(.1);
+                dropZone.GetComponent<PlotStats1>().IncreaseTotal(1);
 
             }
             else if (dropZone == DropZone2)
             {
                 Debug.Log("plot 2 +1");
                 manaBar.GetComponent<Mana>().reduceMana(.1);
+                dropZone.GetComponent<PlotStats2>().IncreaseTotal(1);
+
             }
             else if (dropZone == DropZone3)
             {
                 Debug.Log("plot 3 +1");
                 manaBar.GetComponent<Mana>().reduceMana(.1);
+                dropZone.GetComponent<PlotStats3>().IncreaseTotal(1);
             }
             else if (dropZone == DropZone4)
             {
                 Debug.Log("plot 4 +1");
                 manaBar.GetComponent<Mana>().reduceMana(.1);
+                dropZone.GetComponent<PlotStats4>().IncreaseTotal(1);
             }
             Button.GetComponent<Draw_button>().RemoveCardInHand();
             Destroy(gameObject);

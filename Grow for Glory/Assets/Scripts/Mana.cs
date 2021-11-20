@@ -45,10 +45,10 @@ public class Mana : MonoBehaviour
     {
         //fills the bar to the current mana amount
         barImage.fillAmount = ((float)currMana);
-        Debug.Log(currMana);
+        //Debug.Log(currMana);
         //gets an int equivalent of the current mana
         double mana = currMana * 10;
-        Debug.Log(mana);
+        //Debug.Log(mana);
         //changes the text bassed on the current mana
         string total = "Mana: " + mana;
         manaTotal.text = total;
