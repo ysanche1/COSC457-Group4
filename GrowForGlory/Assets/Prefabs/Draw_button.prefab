@@ -60,6 +60,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -92,7 +93,7 @@ GameObject:
   - component: {fileID: 7525817992746422780}
   - component: {fileID: 7525817992746422783}
   m_Layer: 5
-  m_Name: Draw_Button
+  m_Name: Draw_button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -141,6 +142,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -169,6 +171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -198,8 +201,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7525817992746422783}
-        m_MethodName: OnClick
+      - m_Target: {fileID: 11500000, guid: ea8ca268316f44f0d8e5f8df4c0aee17, type: 3}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -218,8 +222,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 7525817992746422754}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cd8a06b55de2104c8eadba0cc6fa9ec, type: 3}
+  m_Script: {fileID: 11500000, guid: ea8ca268316f44f0d8e5f8df4c0aee17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Card1: {fileID: 7789376148755107977, guid: 3a6b379de3b8a50418d8820e4ebfe78c, type: 3}
-  Card2: {fileID: 7789376148755107977, guid: 3a6b379de3b8a50418d8820e4ebfe78c, type: 3}
+  Card1: {fileID: 0}
+  Card2: {fileID: 0}
+  Card3: {fileID: 0}
+  Card4: {fileID: 0}
+  PlayerArea: {fileID: 0}
+  card: {fileID: 0}
+  dayCount: {fileID: 0}
+  days: 0

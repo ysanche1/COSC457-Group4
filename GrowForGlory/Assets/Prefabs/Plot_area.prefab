@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4887338278687986322}
   - component: {fileID: 4887338278687986323}
   - component: {fileID: 4887338278687986325}
-  - component: {fileID: 110136273240287511}
+  - component: {fileID: -280083768522707012}
   m_Layer: 0
   m_Name: Plot_Area
   m_TagString: Untagged
@@ -63,11 +63,12 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0.5188679, b: 0.0022177089, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 68c2bc60a3490564d8aa8141f0f808f3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1b5a91baa04644cb3a0dbe5a3529724e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -103,7 +104,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 319.66205, y: 303.71118}
   m_EdgeRadius: 0
---- !u!114 &110136273240287511
+--- !u!114 &-280083768522707012
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,9 +113,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4887338278687986321}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53d2b82c8c3dd4547ab2a4c32779f6a6, type: 3}
+  m_Script: {fileID: 11500000, guid: 1b07627493e424fc58504da82ac02bf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  plotScore: 0
+  plotTotal: {fileID: 4887338279013907217}
 --- !u!1 &4887338279013907215
 GameObject:
   m_ObjectHideFlags: 0
@@ -175,6 +178,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
