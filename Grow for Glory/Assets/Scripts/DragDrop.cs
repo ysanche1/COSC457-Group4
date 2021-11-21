@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class DragDrop : MonoBehaviour
 {
-    //declares all needed varables 
+
+    //declares all needed varables
     public GameObject Canvas;
     public GameObject Button;
     private GameObject DropZone1, DropZone2, DropZone3, DropZone4;
@@ -30,6 +31,7 @@ public class DragDrop : MonoBehaviour
         DropZone2 = GameObject.Find("Plot_2_area");
         DropZone3 = GameObject.Find("Plot_3_area");
         DropZone4 = GameObject.Find("Plot_4_area");
+        
 
 
     }
