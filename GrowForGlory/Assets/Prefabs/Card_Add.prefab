@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2809789329426748067}
   - component: {fileID: 4464956656831614915}
   - component: {fileID: 2222891796829891133}
-  - component: {fileID: -5344246407821421068}
+  - component: {fileID: 4426005502006946292}
   - component: {fileID: 1386702554427861888}
   - component: {fileID: 5090081010348820302}
   - component: {fileID: 5998287581585197}
@@ -79,7 +79,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &-5344246407821421068
+--- !u!114 &4426005502006946292
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -88,9 +88,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7789376148755107977}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c27f335b9f5504b2d8d7b1e63a18b7c3, type: 3}
+  m_Script: {fileID: 11500000, guid: 4a278ac9abc85474996b8b14a1a35872, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Canvas: {fileID: 0}
+  Button: {fileID: 0}
 --- !u!114 &1386702554427861888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,8 +110,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: -5344246407821421068}
-          m_TargetAssemblyTypeName: 
+        - m_Target: {fileID: -1146298721483226949, guid: 0ac8dc0cab2a04bbbadf1ee3a532a160, type: 3}
+          m_TargetAssemblyTypeName: DragDrop, Assembly-CSharp
           m_MethodName: StartDrag
           m_Mode: 1
           m_Arguments:
@@ -124,8 +126,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: -5344246407821421068}
-          m_TargetAssemblyTypeName: 
+        - m_Target: {fileID: -1146298721483226949, guid: 0ac8dc0cab2a04bbbadf1ee3a532a160, type: 3}
+          m_TargetAssemblyTypeName: DragDrop, Assembly-CSharp
           m_MethodName: EndDrag
           m_Mode: 1
           m_Arguments:

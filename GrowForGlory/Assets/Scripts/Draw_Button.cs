@@ -17,6 +17,26 @@ public class Draw_Button : MonoBehaviour
     private static int CardsInHand = 0;
     private int Rand;
 
+    // Start is called before the first frame update
+    void Start()
+    {
+        dayCount = gameObject.GetComponent<Text>();
+        days = 0;
+    }
+
+    // Called from DragDrop.cs
+    public void RemoveCardInHand()
+    {
+        CardsInHand -= 1;
+    }
+
+    // Increment to next day
+    public void IncreaseDays()
+    {
+        days++;
+        dayCount.text = $"Current Day: {days}/7";
+    }
+
     public void OnClick()
     {
 
@@ -65,25 +85,7 @@ public class Draw_Button : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        dayCount = GameObject.Find("Day_Count").GetComponent<Text>();
-        days = 0;
-    }
-
-    // Called from DragDrop.cs
-    public void RemoveCardInHand()
-    {
-        CardsInHand -= 1;
-    }
-
-    // Increment to next day
-    public void IncreaseDays()
-    {
-        days++;
-        dayCount.text = "Current Day: " + days + "/7";
-    }
+    
 
     // Update is called once per frame
     void Update()

@@ -64,11 +64,12 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b95aacf7368d7734384b6a3fdd695dec, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0dac44190e8fb4758be578ef85a41821, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -87,7 +88,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8496752553464498563}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c20b022f77148c94caad28fbf662a249, type: 3}
+  m_Script: {fileID: 11500000, guid: 4a278ac9abc85474996b8b14a1a35872, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Canvas: {fileID: 0}
@@ -110,6 +111,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 2149402870570767245}
+          m_TargetAssemblyTypeName: 
           m_MethodName: StartDrag
           m_Mode: 1
           m_Arguments:
@@ -125,6 +127,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 2149402870570767245}
+          m_TargetAssemblyTypeName: 
           m_MethodName: EndDrag
           m_Mode: 1
           m_Arguments:
