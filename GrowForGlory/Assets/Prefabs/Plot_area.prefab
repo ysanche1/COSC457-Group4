@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4887338278687986325}
   - component: {fileID: 110136273240287511}
   m_Layer: 0
-  m_Name: Plot_area
+  m_Name: Plot_Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
