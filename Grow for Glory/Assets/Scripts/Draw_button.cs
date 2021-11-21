@@ -17,43 +17,45 @@ public class Draw_button : MonoBehaviour
     private static int CardsInHand = 0;
     private int Rand;
 
-    public void OnClick() 
+    public void OnClick()
     {
-       
+
         if (days < 7)
         {
             IncreaseDays();
             while (CardsInHand < 5)
             {
-                Rand = Random.Range(1, 5); // Random number 1-4
+                Rand = Random.Range(1, 101); // Random number 1-100
 
-                // All card types are currently equally likely to be drawn -> change weights?
-                switch (Rand)
+                /*  
+                 *  Basic_Pest -> 1-10 = 10%
+                 *  Basic_Mult -> 11-30 = 20%
+                 *  Basic_Weather -> 31-50 = 20%
+                 *  Basic_Pest -> 51+ = 50%
+                 */
+                if (Rand <= 10)
                 {
-                    // Cases contain repeated code that can be cleaned up
-                    case 1:
-                        card = Instantiate(Card1, new Vector2(0, 0), Quaternion.identity); //Instantiate creates the game object in the scene
-                        card.transform.SetParent(PlayerArea.transform, false);
-                        CardsInHand++;
-                        break;
-
-                    case 2:
-                        card = Instantiate(Card2, new Vector2(0, 0), Quaternion.identity);
-                        card.transform.SetParent(PlayerArea.transform, false);
-                        CardsInHand++;
-                        break;
-
-                    case 3:
-                        card = Instantiate(Card3, new Vector2(0, 0), Quaternion.identity);
-                        card.transform.SetParent(PlayerArea.transform, false);
-                        CardsInHand++;
-                        break;
-
-                    case 4:
-                        card = Instantiate(Card4, new Vector2(0, 0), Quaternion.identity);
-                        card.transform.SetParent(PlayerArea.transform, false);
-                        CardsInHand++;
-                        break;
+                    card = Instantiate(Card3, new Vector2(0, 0), Quaternion.identity); // Instantiate Basic_Pest card inside PlayerArea
+                    card.transform.SetParent(PlayerArea.transform, false);
+                    CardsInHand++;
+                }
+                else if (Rand >= 11 && Rand <= 30)
+                {
+                    card = Instantiate(Card2, new Vector2(0, 0), Quaternion.identity); // Instantiate Basic_Mult card inside PlayerArea
+                    card.transform.SetParent(PlayerArea.transform, false);
+                    CardsInHand++;
+                }
+                else if (Rand >= 31 && Rand <= 50)
+                {
+                    card = Instantiate(Card4, new Vector2(0, 0), Quaternion.identity); // Instantiate Basic_Pest card inside PlayerArea
+                    card.transform.SetParent(PlayerArea.transform, false);
+                    CardsInHand++;
+                }
+                else
+                {
+                    card = Instantiate(Card1, new Vector2(0, 0), Quaternion.identity); // Instantiate Basic_Pest card inside PlayerArea
+                    card.transform.SetParent(PlayerArea.transform, false);
+                    CardsInHand++;
                 }
             }
         }
