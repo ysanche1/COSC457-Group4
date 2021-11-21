@@ -31,7 +31,7 @@ public class Draw_button : MonoBehaviour
                  *  Basic_Pest -> 1-10 = 10%
                  *  Basic_Mult -> 11-30 = 20%
                  *  Basic_Weather -> 31-50 = 20%
-                 *  Basic_Pest -> 51+ = 50%
+                 *  Basic_Add -> 51+ = 50%
                  */
                 if (Rand <= 10)
                 {
@@ -53,7 +53,7 @@ public class Draw_button : MonoBehaviour
                 }
                 else
                 {
-                    card = Instantiate(Card1, new Vector2(0, 0), Quaternion.identity); // Instantiate Basic_Pest card inside PlayerArea
+                    card = Instantiate(Card1, new Vector2(0, 0), Quaternion.identity); // Instantiate Basic_Add card inside PlayerArea
                     card.transform.SetParent(PlayerArea.transform, false);
                     CardsInHand++;
                 }
