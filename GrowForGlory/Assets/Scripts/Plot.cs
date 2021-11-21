@@ -7,18 +7,15 @@ public class Plot : MonoBehaviour
 {
     public int plotScore;
     public Text plotTotal;
-    private GameObject dropZone;
-    public GameObject plot;
-
 
     // Start is called before the first frame update
     void Start()
     {
-        // --- from previous PlotStats1/2/3/4 scripts
+        // from previous PlotStats1/2/3/4 scripts
         // sets the score of the plot to zero at the start
         plotScore = 0;
         // grabs the text compenet of the prot_total_1 game object
-        plotTotal = GameObject.Find("Garden").GetComponent<Text>();
+        plotTotal = GameObject.Find("plot_total_1").GetComponent<Text>();
         // sets the plot total text
         plotTotal.text = "Plot Total: " + plotScore;
     }
