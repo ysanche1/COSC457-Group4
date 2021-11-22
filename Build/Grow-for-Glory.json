@@ -1,0 +1,16 @@
+{
+"companyName": "COSC457-G4",
+"productName": "Grow-for-Glory",
+"productVersion": "0.1",
+"dataUrl": "Grow-for-Glory.data.unityweb",
+"wasmCodeUrl": "Grow-for-Glory.wasm.code.unityweb",
+"wasmFrameworkUrl": "Grow-for-Glory.wasm.framework.unityweb",
+"graphicsAPI": ["WebGL 2.0","WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20",
+"cacheControl": {"default": "must-revalidate"},
+"developmentBuild": false,
+"multithreading": false,
+"unityVersion": "2019.4.1f1"
+}
