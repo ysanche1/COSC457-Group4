@@ -13,7 +13,7 @@ public class Draw_button : MonoBehaviour
     public GameObject PlayerArea;
     public GameObject card;
     public Text dayCount;
-    public int days;
+    public int days = 0; 
 
     private static int CardsInHand = 0;
     private int Rand;
@@ -22,11 +22,13 @@ public class Draw_button : MonoBehaviour
 
     public void OnClick()
     {
+        Debug.Log("OnClick start: " + days);
 
         if (days < 7)
         {
             IncreaseDays();
-            
+            Debug.Log("if days < 7: " + days);
+
             while (CardsInHand < 5)
             {
                 Rand = Random.Range(1, 101); // Random number 1-100
@@ -62,7 +64,14 @@ public class Draw_button : MonoBehaviour
                     CardsInHand++;
                 }
             }
-        } else
+
+            if (days == 7)
+            {
+                // Change text on Button to "End Week"
+                GameObject.Find("Draw_button").GetComponentInChildren<Text>().text = "End Week";
+            }
+        }
+        else
         {
             // We are now on day 7, end game
             SceneManager.LoadScene("Scene_1");

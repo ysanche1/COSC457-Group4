@@ -13,6 +13,7 @@ TagManager:
   - PlotStats3
   - PlotStats4
   - manaBar
+  - DrawButton
   layers:
   - Default
   - TransparentFX

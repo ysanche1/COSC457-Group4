@@ -33,7 +33,7 @@ public class Mana : MonoBehaviour
         if(currMana - Cost <= 0.0)
         {
             currMana = 0;
-            Debug.Log("No Mana");
+            // Debug.Log("No Mana");
         }else
         {
             currMana = (currMana - Cost);
@@ -44,7 +44,7 @@ public class Mana : MonoBehaviour
 
     public void addMana(double amt)
     {
-        Debug.Log(currMana);
+        // Debug.Log(currMana);
         if (currMana + amt >= 1)
         {
             currMana = 1;
@@ -54,7 +54,7 @@ public class Mana : MonoBehaviour
 
         }
         barImage.fillAmount = ((float)currMana);
-        Debug.Log(currMana);
+        // Debug.Log(currMana);
     }
 
 
