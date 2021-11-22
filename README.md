@@ -1,6 +1,12 @@
 # COSC457-Group4
 
 # Project Build Information
+**First Release:**
+
+Unity [Version 2019.4.1f1](https://unity3d.com/unity/qa/lts-releases?version=2019.4&page=4)
+Modules: WebGL Build Support, Windows Build Support (Mono), Mac Build Support (IL2CPP)
+
+**Refactored Version:**
 
 Unity [Version 2021.3.23f1](https://unity3d.com/es/unity/whats-new/2020.3.23) with Modules: WebGL Build Support, Windows Build Support (Mono), Mac Build Support (IL2CPP)
 
