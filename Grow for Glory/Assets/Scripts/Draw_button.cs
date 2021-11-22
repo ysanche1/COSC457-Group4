@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Draw_button : MonoBehaviour
 {
@@ -61,10 +62,15 @@ public class Draw_button : MonoBehaviour
                     CardsInHand++;
                 }
             }
-            manaBar = GameObject.FindGameObjectWithTag("manaBar");
-            manaBar.GetComponent<Mana>().addMana(.5);
-        }
+        } else
+        {
+            // We are now on day 7, end game
+            SceneManager.LoadScene("Scene_1");
 
+            
+        }
+         manaBar = GameObject.FindGameObjectWithTag("manaBar");
+         manaBar.GetComponent<Mana>().addMana(.5);
 
 
 
