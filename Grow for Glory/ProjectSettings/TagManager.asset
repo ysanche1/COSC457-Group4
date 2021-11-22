@@ -3,7 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - addCard
+  - multCard
+  - pestCard
+  - weatherCard
+  - PlotStats1
+  - PlotStats2
+  - PlotStats3
+  - PlotStats4
+  - manaBar
   layers:
   - Default
   - TransparentFX

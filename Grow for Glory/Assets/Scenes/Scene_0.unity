@@ -214,7 +214,7 @@ GameObject:
   - component: {fileID: 221845772}
   m_Layer: 0
   m_Name: Plot_4_area
-  m_TagString: Untagged
+  m_TagString: PlotStats4
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -331,7 +331,7 @@ GameObject:
   - component: {fileID: 259826157}
   m_Layer: 0
   m_Name: Plot_3_area
-  m_TagString: Untagged
+  m_TagString: PlotStats3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -526,7 +526,7 @@ GameObject:
   - component: {fileID: 320414837}
   m_Layer: 0
   m_Name: Plot_1_area
-  m_TagString: Untagged
+  m_TagString: PlotStats1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -725,7 +725,7 @@ GameObject:
   - component: {fileID: 532112035}
   m_Layer: 0
   m_Name: newManaBar
-  m_TagString: Untagged
+  m_TagString: manaBar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1079,7 +1079,7 @@ GameObject:
   - component: {fileID: 1494298151}
   m_Layer: 0
   m_Name: Plot_2_area
-  m_TagString: Untagged
+  m_TagString: PlotStats2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
