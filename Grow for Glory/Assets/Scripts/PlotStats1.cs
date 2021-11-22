@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlotStats1 : MonoBehaviour
 {
-   
+
     public int plotScore;
     public Text plotTotal;
     // Start is called before the first frame update
@@ -25,6 +25,12 @@ public class PlotStats1 : MonoBehaviour
         //sets the plot total text to display the plot score
         plotTotal.text = "Plot Total: " + plotScore;
     }
+
+    public void multiplyTotal(int multVal)
+    {
+        plotScore = (plotScore * multVal);
+    }
+
     public void IncreaseTotal(int increase)
     {
         //increments the plot score so by the entered amount 

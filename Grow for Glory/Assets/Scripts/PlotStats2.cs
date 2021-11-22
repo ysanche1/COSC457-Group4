@@ -20,6 +20,11 @@ public class PlotStats2 : MonoBehaviour
         plotTotal.text = "Plot Total: " + plotScore;
     }
 
+    public void multiplyTotal(int multVal)
+    {
+        plotScore = (plotScore * multVal);
+    }
+
     // Update is called once per frame
     void Update()
     {
