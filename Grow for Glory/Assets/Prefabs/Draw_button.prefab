@@ -66,7 +66,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 25
+    m_FontSize: 40
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
@@ -107,7 +107,7 @@ RectTransform:
   m_GameObject: {fileID: 7525817992746422754}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7525817991786483903}
   m_Father: {fileID: 0}
@@ -116,7 +116,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 693, y: -124}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 320, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7525817992746422782
 CanvasRenderer:
@@ -223,3 +223,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Card1: {fileID: 7789376148755107977, guid: 3a6b379de3b8a50418d8820e4ebfe78c, type: 3}
   Card2: {fileID: 7789376148755107977, guid: 3a6b379de3b8a50418d8820e4ebfe78c, type: 3}
+  Card3: {fileID: 0}
+  Card4: {fileID: 0}
+  PlayerArea: {fileID: 0}
+  card: {fileID: 0}
+  dayCount: {fileID: 0}
+  days: 0
