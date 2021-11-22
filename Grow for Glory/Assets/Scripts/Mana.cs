@@ -30,8 +30,9 @@ public class Mana : MonoBehaviour
     //method to reduce the total mana by a float cost
     public void reduceMana(double Cost)
     {
-        if(currMana <= 0.0)
+        if(currMana - Cost <= 0.0)
         {
+            currMana = 0;
             Debug.Log("No Mana");
         }else
         {
@@ -40,6 +41,23 @@ public class Mana : MonoBehaviour
         }
         
     }
+
+    public void addMana(double amt)
+    {
+        Debug.Log(currMana);
+        if (currMana + amt >= 1)
+        {
+            currMana = 1;
+        } else
+        {
+            currMana = currMana + amt;
+
+        }
+        barImage.fillAmount = ((float)currMana);
+        Debug.Log(currMana);
+    }
+
+
     // Update is called once per frame
     void Update()
     {

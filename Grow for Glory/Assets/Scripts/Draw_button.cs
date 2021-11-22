@@ -17,12 +17,15 @@ public class Draw_button : MonoBehaviour
     private static int CardsInHand = 0;
     private int Rand;
 
+    private GameObject manaBar;
+
     public void OnClick()
     {
 
         if (days < 7)
         {
             IncreaseDays();
+            
             while (CardsInHand < 5)
             {
                 Rand = Random.Range(1, 101); // Random number 1-100
@@ -58,7 +61,13 @@ public class Draw_button : MonoBehaviour
                     CardsInHand++;
                 }
             }
+            manaBar = GameObject.FindGameObjectWithTag("manaBar");
+            manaBar.GetComponent<Mana>().addMana(.5);
         }
+
+
+
+
     }
 
     void Start()
@@ -82,5 +91,6 @@ public class Draw_button : MonoBehaviour
     {
         days++;
         dayCount.text = "Current Day: " + days + "/7";
+
     }
 }

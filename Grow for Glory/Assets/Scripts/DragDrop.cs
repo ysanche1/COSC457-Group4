@@ -10,13 +10,14 @@ public class DragDrop : MonoBehaviour
     public GameObject Canvas;
     public GameObject Button;
     private GameObject DropZone1, DropZone2, DropZone3, DropZone4;
-    private GameObject manaBar;
+    public GameObject manaBar;
   
     private bool isDragging = false;
     private GameObject startParent;
     private Vector2 startPosition;
-    private GameObject dropZone;
+    public GameObject dropZone;
     private bool isOverDropZone;
+    private GameObject selectedCard;
 
 
 
@@ -31,8 +32,6 @@ public class DragDrop : MonoBehaviour
         DropZone2 = GameObject.Find("Plot_2_area");
         DropZone3 = GameObject.Find("Plot_3_area");
         DropZone4 = GameObject.Find("Plot_4_area");
-        
-
 
     }
 
@@ -43,6 +42,7 @@ public class DragDrop : MonoBehaviour
         // grabs the plot it collided with 
         dropZone = collision.gameObject;
      
+        /*
         if (dropZone == DropZone1)
         {
             Debug.Log("plot 1");
@@ -59,6 +59,7 @@ public class DragDrop : MonoBehaviour
         {
             Debug.Log("plot 4");
         }
+        */
         
     }
 
@@ -68,9 +69,15 @@ public class DragDrop : MonoBehaviour
         dropZone = null;
     }
     
+    public string returnTag()
+    {
+        return selectedCard.tag;
+    }
+
 
     public void StartDrag()
     {
+        selectedCard = this.gameObject;
         isDragging = true;
         //saves parent object 
         startParent = transform.parent.gameObject;
@@ -80,48 +87,51 @@ public class DragDrop : MonoBehaviour
 
     public void EndDrag()
     {
+        
         //stops the card from following the mouse
         isDragging = false;
         if (isOverDropZone)
         {
-            if (dropZone == DropZone1)
-            {
+            selectedCard.GetComponent<CardEffects>().doCardAction(selectedCard);
+            /*if (dropZone == DropZone1) {
+                // check the tag of the card that is selected and reduce mana / increase total accordingly
+
                 Debug.Log("plot 1 +1");
-                //calls reduce mana method to deacease overall mana by one
-                manaBar.GetComponent<Mana>().reduceMana(.1);
-                //call increase total form the plotstats script based on the plot
-                dropZone.GetComponent<PlotStats1>().IncreaseTotal(1);
+          
 
             }
             else if (dropZone == DropZone2)
             {
                 Debug.Log("plot 2 +1");
                 //calls reduce mana method to deacease overall mana by one  
-                manaBar.GetComponent<Mana>().reduceMana(.1);
+                //manaBar.GetComponent<Mana>().reduceMana(.1);
                 //call increase total form the plotstats script based on the plot
-                dropZone.GetComponent<PlotStats2>().IncreaseTotal(1);
+                //dropZone.GetComponent<PlotStats2>().IncreaseTotal(1);
 
             }
             else if (dropZone == DropZone3)
             {
                 Debug.Log("plot 3 +1");
                 //calls reduce mana method to deacease overall mana by one
-                manaBar.GetComponent<Mana>().reduceMana(.1);
+                //manaBar.GetComponent<Mana>().reduceMana(.1);
                 //call increase total form the plotstats script based on the plot
-                dropZone.GetComponent<PlotStats3>().IncreaseTotal(1);
+                //dropZone.GetComponent<PlotStats3>().IncreaseTotal(1);
             }
             else if (dropZone == DropZone4)
             {
                 Debug.Log("plot 4 +1");
                 //calls reduce mana method to deacease overall mana by one
-                manaBar.GetComponent<Mana>().reduceMana(.1);
+                //manaBar.GetComponent<Mana>().reduceMana(.1);
                 //call increase total form the plotstats script based on the plot
-                dropZone.GetComponent<PlotStats4>().IncreaseTotal(1);
+                //dropZone.GetComponent<PlotStats4>().IncreaseTotal(1);
             }
+            */
             //reduces the number of card in hand by 1
+
             Button.GetComponent<Draw_button>().RemoveCardInHand();
             //destories the played card
-            Destroy(gameObject);
+
+          
 
         }
         else
