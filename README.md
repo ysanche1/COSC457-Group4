@@ -48,7 +48,7 @@ On the bottom right of the *Package Manager* window, click *Update to 1.1.30*
 
 Save project then quit Unity. Go back to Unity Hub and reopen project. Console warnings should be gone.
 
-###Create Cards (Scriptable objects)
+### Create Cards (Scriptable objects)
 1. Right click go to "Create", go down to the bottom of the menu and hover over "Cards" and then pick which type of card will be created
 2. Click on the created object in the project menu and fill out all the empty varible spaces 
 3. Then create a prefab of the repective card type and attach the created card to the prefab object in the " cardDisplay scirpt" and then play the game and you should ahve a card 
