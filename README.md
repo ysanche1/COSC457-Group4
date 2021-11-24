@@ -47,3 +47,12 @@ On the bottom right of the *Package Manager* window, click *Update to 1.1.30*
 ### Apply Updates
 
 Save project then quit Unity. Go back to Unity Hub and reopen project. Console warnings should be gone.
+
+###Create Cards (Scriptable objects)
+1. Right click go to "Create", go down to the bottom of the menu and hover over "Cards" and then pick which type of card will be created
+2. Click on the created object in the project menu and fill out all the empty varible spaces 
+3. Then create a prefab of the repective card type and attach the created card to the prefab object in the " cardDisplay scirpt" and then play the game and you should ahve a card 
+4. The card scripts are now in their own folder in the scripts section, no need to worry about the "cardMenu" script it just allows us to access the cards in the create assets menu
+6. The card prefabs are also in their own folders
+7. There is also a seperate folder called "cards" in the assets folder so when creating the scriptable object of cards. 
+8. I am almost positvie that there is a way to create and add them to prefabs and all that from code im just not exactly sure how to do that yet. 
