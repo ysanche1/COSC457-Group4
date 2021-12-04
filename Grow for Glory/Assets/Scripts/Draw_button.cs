@@ -22,8 +22,8 @@ public class Draw_button : MonoBehaviour
     public GameObject card;
     public Text dayCount;
     public int days = 0; 
+    public int CardsInHand = 0;
 
-    private static int CardsInHand = 0;
     private int Rand;
 
     private GameObject manaBar;
@@ -78,7 +78,9 @@ public class Draw_button : MonoBehaviour
                         card = Instantiate(Card10, new Vector2(0, 0), Quaternion.identity); // Instantiate X10 multi card inside PlayerArea
                         card.transform.SetParent(PlayerArea.transform, false);
                         CardsInHand++;
+
                     }
+                    
                 }
                 else if (Rand >= 31 && Rand <= 50)
                 {
@@ -88,13 +90,13 @@ public class Draw_button : MonoBehaviour
                         card.transform.SetParent(PlayerArea.transform, false);
                         CardsInHand++;
                     }
-                    else
+                    else if (Rand >= 37 && Rand <= 50)
                     {
                         card = Instantiate(Card4, new Vector2(0, 0), Quaternion.identity); // Instantiate +10 weather card inside PlayerArea
                         card.transform.SetParent(PlayerArea.transform, false);
                         CardsInHand++;
                     }
-
+                    
                 }
                 else if (Rand >= 51 && Rand <= 100)
                 {
@@ -116,6 +118,7 @@ public class Draw_button : MonoBehaviour
                         card.transform.SetParent(PlayerArea.transform, false);
                         CardsInHand++;
                     }
+                    
                 }
             }
 
@@ -149,7 +152,7 @@ public class Draw_button : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.Log(CardsInHand);
     }
 
     // Called from DragDrop.cs
