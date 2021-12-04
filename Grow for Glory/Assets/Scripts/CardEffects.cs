@@ -9,6 +9,7 @@ public class CardEffects : MonoBehaviour
     private GameObject dropZone;
     private GameObject plot1, plot2, plot3, plot4;
     private Text noMana;
+    private Text noEffect;
 
     public void Start()
     {
@@ -17,6 +18,7 @@ public class CardEffects : MonoBehaviour
         plot3 = GameObject.FindGameObjectWithTag("PlotStats3");
         plot4 = GameObject.FindGameObjectWithTag("PlotStats4");
         noMana = GameObject.Find("no_mana").GetComponent<Text>();
+        noEffect = GameObject.Find("No_Effect").GetComponent<Text>();
     }
 
     public void doCardAction(GameObject card)
@@ -50,7 +52,7 @@ public class CardEffects : MonoBehaviour
                 }
                 break;
             case "X2MultiCard":
-                if (IsPlayable(card, .4))
+                if (IsPlayable(card, .4) && CanMulti(dropZone, card))
                 {
                     manaBar.GetComponent<Mana>().reduceMana(.4);
                     multiplyPlot(dropZone.tag, 2);
@@ -58,7 +60,7 @@ public class CardEffects : MonoBehaviour
                 }
                 break;
             case "X3MultiCard":
-                if (IsPlayable(card, .6))
+                if (IsPlayable(card, .6) && CanMulti(dropZone, card))
                 {
                     manaBar.GetComponent<Mana>().reduceMana(.6);
                     multiplyPlot(dropZone.tag, 3);
@@ -66,7 +68,7 @@ public class CardEffects : MonoBehaviour
                 }
                 break;
             case "X4MultiCard":
-                if (IsPlayable(card, .8))
+                if (IsPlayable(card, .8) && CanMulti(dropZone, card))
                 {
                     manaBar.GetComponent<Mana>().reduceMana(.8);
                     multiplyPlot(dropZone.tag, 4);
@@ -74,7 +76,7 @@ public class CardEffects : MonoBehaviour
                 }
                 break;
             case "X10MultiCard":
-                if (IsPlayable(card, 1))
+                if (IsPlayable(card, 1) && CanMulti(dropZone, card))
                 {
                     manaBar.GetComponent<Mana>().reduceMana(1);
                     multiplyPlot(dropZone.tag, 10);
@@ -111,6 +113,7 @@ public class CardEffects : MonoBehaviour
                     //increasePlot("PlotStats4", 10);
                     weatherMultiCard(3);
                     Destroy(card);
+
                 }
               
                 break;
@@ -127,12 +130,11 @@ public class CardEffects : MonoBehaviour
 
     }
     public void weatherMultiCard(int multiValue)
-    {
-        plot1.GetComponent<PlotStats1>().multiplyTotal(multiValue);
-        plot2.GetComponent<PlotStats2>().multiplyTotal(multiValue);
-        plot3.GetComponent<PlotStats3>().multiplyTotal(multiValue);
-        plot4.GetComponent<PlotStats4>().multiplyTotal(multiValue);
-
+    {   
+            plot1.GetComponent<PlotStats1>().multiplyTotal(multiValue);                
+            plot2.GetComponent<PlotStats2>().multiplyTotal(multiValue);           
+            plot3.GetComponent<PlotStats3>().multiplyTotal(multiValue);         
+            plot4.GetComponent<PlotStats4>().multiplyTotal(multiValue);              
     }
 
     public void increasePlot(string plotTag, int increaseVal)
@@ -166,7 +168,7 @@ public class CardEffects : MonoBehaviour
         switch (plotTag)
         {
             case "PlotStats1":
-                Debug.Log(multVal);
+                Debug.Log(multVal);         
                 dropZone.GetComponent<PlotStats1>().multiplyTotal(multVal);
                 break;
             case "PlotStats2":
@@ -181,7 +183,6 @@ public class CardEffects : MonoBehaviour
                 Debug.Log(multVal);
                 dropZone.GetComponent<PlotStats4>().multiplyTotal(multVal);
                 break;
-
         }
     }
     public bool IsPlayable(GameObject card, double manaCost)
@@ -190,9 +191,7 @@ public class CardEffects : MonoBehaviour
         if (manaBar.GetComponent<Mana>().currMana < manaCost)
         {
             card.GetComponent<DragDrop>().returnToHand();
-            StartCoroutine(wait(1));
-            
-
+            StartCoroutine(noManaWait(1));
             return false;
         }
         else
@@ -201,12 +200,83 @@ public class CardEffects : MonoBehaviour
         }
            
     }
-    IEnumerator wait(int time)
+
+    public bool CanMulti(GameObject plot, GameObject card)
+    {
+        if (plot.tag.Equals("PlotStats1"))
+        {
+            if (plot.GetComponent<PlotStats1>().plotScore <= 0)
+            {
+                card.GetComponent<DragDrop>().returnToHand();
+                StartCoroutine(noEffectWait(1));
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        else if (plot.tag.Equals("PlotStats2"))
+        {
+            if (plot.GetComponent<PlotStats2>().plotScore <= 0)
+            {
+                card.GetComponent<DragDrop>().returnToHand();
+                StartCoroutine(noEffectWait(1));
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        else if (plot.tag.Equals("PlotStats3"))
+        {
+            if (plot.GetComponent<PlotStats3>().plotScore <= 0)
+            {
+                card.GetComponent<DragDrop>().returnToHand();
+                StartCoroutine(noEffectWait(1));
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        else if (plot.tag.Equals("PlotStats4"))
+        {
+            if (plot.GetComponent<PlotStats4>().plotScore <= 0)
+            {
+                card.GetComponent<DragDrop>().returnToHand();
+                StartCoroutine(noEffectWait(1));
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        else
+        {
+            card.GetComponent<DragDrop>().returnToHand();
+            StartCoroutine(noEffectWait(1));
+            return false;
+        }
+
+    }
+    IEnumerator noManaWait(int time)
     {
         noMana.text = "Insuficent Mana";
         yield return new WaitForSeconds(time);
         noMana.text = "";
     }
+
+    IEnumerator noEffectWait(int time)
+    {
+        noEffect.text = "No Effect";
+        yield return new WaitForSeconds(time);
+        noEffect.text = "";
+    }
+
 
 
 }
