@@ -6,10 +6,18 @@ using UnityEngine.SceneManagement;
 
 public class Draw_button : MonoBehaviour
 {
-    public GameObject Card1; // Basic_Add
-    public GameObject Card2; // Basic_Mult
-    public GameObject Card3; // Basic_Pest
-    public GameObject Card4; // Basic_Weather
+    public GameObject Card1; // +3 add card
+    public GameObject Card2; // X3 multi card
+    public GameObject Card3; // Pest card
+    public GameObject Card4; // +10 weather
+    public GameObject Card5; // +5 add card
+    public GameObject Card6; // +10 add card
+    public GameObject Card7; // X2 multi card
+    public GameObject Card8; // X3 Weather card
+    public GameObject Card9; // X4 multi card
+    public GameObject Card10;// X10 multi card
+
+
     public GameObject PlayerArea;
     public GameObject card;
     public Text dayCount;
@@ -47,21 +55,67 @@ public class Draw_button : MonoBehaviour
                 }
                 else if (Rand >= 11 && Rand <= 30)
                 {
-                    card = Instantiate(Card2, new Vector2(0, 0), Quaternion.identity); // Instantiate Basic_Mult card inside PlayerArea
-                    card.transform.SetParent(PlayerArea.transform, false);
-                    CardsInHand++;
+                    if (Rand >= 11 && Rand <= 19)
+                    {
+                        card = Instantiate(Card7, new Vector2(0, 0), Quaternion.identity); // Instantiate X2 multi card inside PlayerArea
+                        card.transform.SetParent(PlayerArea.transform, false);
+                        CardsInHand++;
+                    }
+                    else if (Rand >= 20 && Rand <= 25)
+                    {
+                        card = Instantiate(Card2, new Vector2(0, 0), Quaternion.identity); // Instantiate X3 multi card inside PlayerArea
+                        card.transform.SetParent(PlayerArea.transform, false);
+                        CardsInHand++;
+                    }
+                    else if (Rand >= 26 && Rand <= 28)
+                    {
+                        card = Instantiate(Card9, new Vector2(0, 0), Quaternion.identity); // Instantiate X4 multi card inside PlayerArea
+                        card.transform.SetParent(PlayerArea.transform, false);
+                        CardsInHand++;
+                    }
+                    else if (Rand >= 29 && Rand <= 30)
+                    {
+                        card = Instantiate(Card10, new Vector2(0, 0), Quaternion.identity); // Instantiate X10 multi card inside PlayerArea
+                        card.transform.SetParent(PlayerArea.transform, false);
+                        CardsInHand++;
+                    }
                 }
                 else if (Rand >= 31 && Rand <= 50)
                 {
-                    card = Instantiate(Card4, new Vector2(0, 0), Quaternion.identity); // Instantiate Basic_Pest card inside PlayerArea
-                    card.transform.SetParent(PlayerArea.transform, false);
-                    CardsInHand++;
+                    if (Rand >= 31 && Rand <= 36)
+                    {
+                        card = Instantiate(Card8, new Vector2(0, 0), Quaternion.identity); // Instantiate X3 weather card card inside PlayerArea
+                        card.transform.SetParent(PlayerArea.transform, false);
+                        CardsInHand++;
+                    }
+                    else
+                    {
+                        card = Instantiate(Card4, new Vector2(0, 0), Quaternion.identity); // Instantiate +10 weather card inside PlayerArea
+                        card.transform.SetParent(PlayerArea.transform, false);
+                        CardsInHand++;
+                    }
+
                 }
-                else
+                else if (Rand >= 51 && Rand <= 100)
                 {
-                    card = Instantiate(Card1, new Vector2(0, 0), Quaternion.identity); // Instantiate Basic_Add card inside PlayerArea
-                    card.transform.SetParent(PlayerArea.transform, false);
-                    CardsInHand++;
+                    if (Rand >= 51 && Rand <= 70)
+                    {
+                        card = Instantiate(Card1, new Vector2(0, 0), Quaternion.identity); // Instantiate +3 Add card inside PlayerArea
+                        card.transform.SetParent(PlayerArea.transform, false);
+                        CardsInHand++;
+                    }
+                    else if (Rand >= 71 && Rand <= 85)
+                    {
+                        card = Instantiate(Card5, new Vector2(0, 0), Quaternion.identity); // Instantiate +5 Add card inside PlayerArea
+                        card.transform.SetParent(PlayerArea.transform, false);
+                        CardsInHand++;
+                    }
+                    else if (Rand >= 86 && Rand <= 100)
+                    {
+                        card = Instantiate(Card6, new Vector2(0, 0), Quaternion.identity); // Instantiate +10 Add card inside PlayerArea
+                        card.transform.SetParent(PlayerArea.transform, false);
+                        CardsInHand++;
+                    }
                 }
             }
 
@@ -79,7 +133,7 @@ public class Draw_button : MonoBehaviour
             
         }
          manaBar = GameObject.FindGameObjectWithTag("manaBar");
-         manaBar.GetComponent<Mana>().addMana(.5);
+         manaBar.GetComponent<Mana>().setCurrMana(1);
 
 
 
