@@ -74,6 +74,12 @@ public class DragDrop : MonoBehaviour
         return selectedCard.tag;
     }
 
+   public void returnToHand()
+    {
+        transform.position = startPosition;
+        transform.SetParent(startParent.transform, false);
+    }
+
 
     public void StartDrag()
     {
@@ -137,8 +143,7 @@ public class DragDrop : MonoBehaviour
         else
         {
             //returns card to the play area if not placed on a plot
-            transform.position = startPosition;
-            transform.SetParent(startParent.transform, false);
+            this.returnToHand();
         }
     }
 

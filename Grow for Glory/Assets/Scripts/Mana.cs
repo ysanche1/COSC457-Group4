@@ -57,6 +57,11 @@ public class Mana : MonoBehaviour
         // Debug.Log(currMana);
     }
 
+    public void setCurrMana(double amt)
+    {
+        currMana = amt;
+    }
+
 
     // Update is called once per frame
     void Update()
@@ -71,4 +76,6 @@ public class Mana : MonoBehaviour
         string total = "Mana: " + mana;
         manaTotal.text = total;
     }
+
+
 }
