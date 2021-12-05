@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 public class DragDrop : MonoBehaviour
 {
@@ -143,15 +140,15 @@ public class DragDrop : MonoBehaviour
 
         if (GameObject.Find("Plot_1_area").GetComponent<PlotStats1>().getPlotScore() >= growthLimitTwo)
         {
-            ScaleHelper(flower1, DropZone1, 2.5f, 2.5f, 110);
+            ScaleHelper(flower1, DropZone1, 2.5f, 2.5f, -30);
         }
         else if (GameObject.Find("Plot_1_area").GetComponent<PlotStats1>().getPlotScore() >= growthLimitOne) {
-            ScaleHelper(flower1, DropZone1, 2, 2, 75);
+            ScaleHelper(flower1, DropZone1, 2, 2, -30);
         }
 
         if (GameObject.Find("Plot_2_area").GetComponent<PlotStats2>().getPlotScore() >= growthLimitTwo)
         {
-            ScaleHelper(flower2, DropZone2, 2.5f, 2.5f, -20);
+            ScaleHelper(flower2, DropZone2, 2.75f, 2.75f, -30);
         }
         else if (GameObject.Find("Plot_2_area").GetComponent<PlotStats2>().getPlotScore() >= growthLimitOne)
         {
@@ -160,7 +157,7 @@ public class DragDrop : MonoBehaviour
 
         if (GameObject.Find("Plot_3_area").GetComponent<PlotStats3>().getPlotScore() >= growthLimitTwo)
         {
-            ScaleHelper(flower3, DropZone3, 2.5f, 2.5f, -20);
+            ScaleHelper(flower3, DropZone3, 2.35f, 2.35f, -50);
         }
         else if (GameObject.Find("Plot_3_area").GetComponent<PlotStats3>().getPlotScore() >= growthLimitOne)
         {
@@ -169,7 +166,7 @@ public class DragDrop : MonoBehaviour
 
         if (GameObject.Find("Plot_4_area").GetComponent<PlotStats4>().getPlotScore() >= growthLimitTwo)
         {
-            ScaleHelper(flower4, DropZone4, 2.5f, 2.5f, -20);
+            ScaleHelper(flower4, DropZone4, 2.35f, 2.35f, -50);
         }
         else if (GameObject.Find("Plot_4_area").GetComponent<PlotStats4>().getPlotScore() >= growthLimitOne)
         {
