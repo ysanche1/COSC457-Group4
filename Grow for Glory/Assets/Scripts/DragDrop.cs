@@ -21,6 +21,7 @@ public class DragDrop : MonoBehaviour
     public GameObject flower3;
     public GameObject flower4;
 
+    // Score limits to activate plant stage transition
     private int growthLimitOne = 10;
     private int growthLimitTwo = 50;
 
@@ -35,6 +36,8 @@ public class DragDrop : MonoBehaviour
         DropZone2 = GameObject.Find("Plot_2_area");
         DropZone3 = GameObject.Find("Plot_3_area");
         DropZone4 = GameObject.Find("Plot_4_area");
+
+        // EntireFlowerX consists of flower image and flowerpot image, respective of X
         flower1 = GameObject.Find("EntireFlower1");
         flower2 = GameObject.Find("EntireFlower2");
         flower3 = GameObject.Find("EntireFlower3");
@@ -138,10 +141,12 @@ public class DragDrop : MonoBehaviour
             transform.SetParent(Canvas.transform, true);
         }
 
+        // If plotScore is >= growthLimitTwo then call ScaleHelper
         if (GameObject.Find("Plot_1_area").GetComponent<PlotStats1>().getPlotScore() >= growthLimitTwo)
         {
             ScaleHelper(flower1, DropZone1, 2.5f, 2.5f, -30);
         }
+        // Else if plotScore is >= growthLimitOne then call ScaleHelper
         else if (GameObject.Find("Plot_1_area").GetComponent<PlotStats1>().getPlotScore() >= growthLimitOne) {
             ScaleHelper(flower1, DropZone1, 2, 2, -30);
         }
@@ -175,6 +180,7 @@ public class DragDrop : MonoBehaviour
 
     }
 
+    // Scale GameObject by some factors and reposition the GameObject properly in the plot area
     private void ScaleHelper(GameObject go, GameObject dropZ, float scaleX, float scaleY, int transformY) {
         go.transform.localScale = new Vector2(scaleX, scaleY);
         go.transform.position = new Vector2(dropZ.transform.position.x, dropZ.transform.position.y + transformY);
