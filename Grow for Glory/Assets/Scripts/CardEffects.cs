@@ -8,8 +8,10 @@ public class CardEffects : MonoBehaviour
     private GameObject manaBar;
     private GameObject dropZone;
     private GameObject plot1, plot2, plot3, plot4;
+    public GameObject Button;
     private Text noMana;
     private Text noEffect;
+
 
     public void Start()
     {
@@ -17,6 +19,7 @@ public class CardEffects : MonoBehaviour
         plot2 = GameObject.FindGameObjectWithTag("PlotStats2");
         plot3 = GameObject.FindGameObjectWithTag("PlotStats3");
         plot4 = GameObject.FindGameObjectWithTag("PlotStats4");
+        Button = GameObject.Find("Draw_button");
         noMana = GameObject.Find("no_mana").GetComponent<Text>();
         noEffect = GameObject.Find("No_Effect").GetComponent<Text>();
     }
@@ -32,6 +35,8 @@ public class CardEffects : MonoBehaviour
                 {
                     manaBar.GetComponent<Mana>().reduceMana(.2);
                     increasePlot(dropZone.tag, 3);
+                    FindObjectOfType<AudioManager>().Play("add card play");
+                    Button.GetComponent<Draw_button>().RemoveCardInHand();
                     Destroy(card);
                 }
                 break;
@@ -40,6 +45,8 @@ public class CardEffects : MonoBehaviour
                 {
                     manaBar.GetComponent<Mana>().reduceMana(.3);
                     increasePlot(dropZone.tag, 5);
+                    FindObjectOfType<AudioManager>().Play("add card play");
+                    Button.GetComponent<Draw_button>().RemoveCardInHand();
                     Destroy(card);
                 }
                 break;
@@ -48,6 +55,8 @@ public class CardEffects : MonoBehaviour
                 {
                     manaBar.GetComponent<Mana>().reduceMana(.5);
                     increasePlot(dropZone.tag, 10);
+                    FindObjectOfType<AudioManager>().Play("add card play");
+                    Button.GetComponent<Draw_button>().RemoveCardInHand();
                     Destroy(card);
                 }
                 break;
@@ -56,6 +65,8 @@ public class CardEffects : MonoBehaviour
                 {
                     manaBar.GetComponent<Mana>().reduceMana(.4);
                     multiplyPlot(dropZone.tag, 2);
+                    FindObjectOfType<AudioManager>().Play("multi card play");
+                    Button.GetComponent<Draw_button>().RemoveCardInHand();
                     Destroy(card);
                 }
                 break;
@@ -64,6 +75,8 @@ public class CardEffects : MonoBehaviour
                 {
                     manaBar.GetComponent<Mana>().reduceMana(.6);
                     multiplyPlot(dropZone.tag, 3);
+                    FindObjectOfType<AudioManager>().Play("multi card play");
+                    Button.GetComponent<Draw_button>().RemoveCardInHand();
                     Destroy(card);
                 }
                 break;
@@ -72,6 +85,8 @@ public class CardEffects : MonoBehaviour
                 {
                     manaBar.GetComponent<Mana>().reduceMana(.8);
                     multiplyPlot(dropZone.tag, 4);
+                    FindObjectOfType<AudioManager>().Play("multi card play");
+                    Button.GetComponent<Draw_button>().RemoveCardInHand();
                     Destroy(card);
                 }
                 break;
@@ -80,6 +95,8 @@ public class CardEffects : MonoBehaviour
                 {
                     manaBar.GetComponent<Mana>().reduceMana(1);
                     multiplyPlot(dropZone.tag, 10);
+                    FindObjectOfType<AudioManager>().Play("multi card play");
+                    Button.GetComponent<Draw_button>().RemoveCardInHand();
                     Destroy(card);
                 }
                 break;
@@ -88,6 +105,8 @@ public class CardEffects : MonoBehaviour
                 {
                     manaBar.GetComponent<Mana>().reduceMana(.1);
                     increasePlot(dropZone.tag, -10);
+                    FindObjectOfType<AudioManager>().Play("pest card play");
+                    Button.GetComponent<Draw_button>().RemoveCardInHand();
                     Destroy(card);
                 }
                 break;
@@ -100,6 +119,8 @@ public class CardEffects : MonoBehaviour
                     //increasePlot("PlotStats3", 10);
                     //increasePlot("PlotStats4", 10);
                     weatherAddCard(10);
+                    FindObjectOfType<AudioManager>().Play("weather card play");
+                    Button.GetComponent<Draw_button>().RemoveCardInHand();
                     Destroy(card);
                 }
                 break;
@@ -112,6 +133,8 @@ public class CardEffects : MonoBehaviour
                     //increasePlot("PlotStats3", 10);
                     //increasePlot("PlotStats4", 10);
                     weatherMultiCard(3);
+                    FindObjectOfType<AudioManager>().Play("weather card play");
+                    Button.GetComponent<Draw_button>().RemoveCardInHand();
                     Destroy(card);
 
                 }
@@ -188,7 +211,7 @@ public class CardEffects : MonoBehaviour
     public bool IsPlayable(GameObject card, double manaCost)
     {
     
-        if (manaBar.GetComponent<Mana>().currMana < manaCost)
+        if ((float)manaBar.GetComponent<Mana>().currMana < (float)manaCost)
         {
             card.GetComponent<DragDrop>().returnToHand();
             StartCoroutine(noManaWait(1));

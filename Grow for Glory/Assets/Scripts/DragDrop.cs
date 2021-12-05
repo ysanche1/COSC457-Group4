@@ -98,45 +98,18 @@ public class DragDrop : MonoBehaviour
         isDragging = false;
         if (isOverDropZone)
         {
-            selectedCard.GetComponent<CardEffects>().doCardAction(selectedCard);
-            /*if (dropZone == DropZone1) {
-                // check the tag of the card that is selected and reduce mana / increase total accordingly
-
-                Debug.Log("plot 1 +1");
-          
-
-            }
-            else if (dropZone == DropZone2)
+            if (dropZone.tag == "PlotStats1" || dropZone.tag == "PlotStats2" || dropZone.tag == "PlotStats3" || dropZone.tag == "PlotStats4")
             {
-                Debug.Log("plot 2 +1");
-                //calls reduce mana method to deacease overall mana by one  
-                //manaBar.GetComponent<Mana>().reduceMana(.1);
-                //call increase total form the plotstats script based on the plot
-                //dropZone.GetComponent<PlotStats2>().IncreaseTotal(1);
 
-            }
-            else if (dropZone == DropZone3)
-            {
-                Debug.Log("plot 3 +1");
-                //calls reduce mana method to deacease overall mana by one
-                //manaBar.GetComponent<Mana>().reduceMana(.1);
-                //call increase total form the plotstats script based on the plot
-                //dropZone.GetComponent<PlotStats3>().IncreaseTotal(1);
-            }
-            else if (dropZone == DropZone4)
-            {
-                Debug.Log("plot 4 +1");
-                //calls reduce mana method to deacease overall mana by one
-                //manaBar.GetComponent<Mana>().reduceMana(.1);
-                //call increase total form the plotstats script based on the plot
-                //dropZone.GetComponent<PlotStats4>().IncreaseTotal(1);
-            }
-            */
-            //reduces the number of card in hand by 1
 
-            Button.GetComponent<Draw_button>().RemoveCardInHand();
-            Debug.Log(Button.GetComponent<Draw_button>().CardsInHand);
-            //destories the played card
+                selectedCard.GetComponent<CardEffects>().doCardAction(selectedCard);
+                Debug.Log(Button.GetComponent<Draw_button>().CardsInHand);
+                //destories the played card
+            }
+            else
+            {
+                this.returnToHand();
+            }
 
           
 

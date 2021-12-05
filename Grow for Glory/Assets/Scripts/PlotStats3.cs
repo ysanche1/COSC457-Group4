@@ -17,7 +17,7 @@ public class PlotStats3 : MonoBehaviour
         //grabs the text compenet of the prot_total_2 game object
         plotTotal = GameObject.Find("plot_total_3").GetComponent<Text>();
         // sets the plot total text
-        plotTotal.text = "Plot Total: " + plotScore;
+        plotTotal.text = plotScore.ToString();
     }
 
     public void multiplyTotal(int multVal)
@@ -29,7 +29,7 @@ public class PlotStats3 : MonoBehaviour
     void Update()
     {
         //sets the plot total text to display the plot score
-        plotTotal.text = "Plot Total: " + plotScore;
+        plotTotal.text = plotScore.ToString();
     }
     public void IncreaseTotal(int increase)
     {
