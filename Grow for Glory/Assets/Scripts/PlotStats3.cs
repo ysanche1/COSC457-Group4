@@ -36,4 +36,9 @@ public class PlotStats3 : MonoBehaviour
         //increments the plot score so by the entered amount 
         plotScore = (plotScore + increase);
     }
+
+    public int getPlotScore()
+    {
+        return plotScore;
+    }
 }

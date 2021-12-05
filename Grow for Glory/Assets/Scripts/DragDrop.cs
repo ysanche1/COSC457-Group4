@@ -19,7 +19,13 @@ public class DragDrop : MonoBehaviour
     private bool isOverDropZone;
     private GameObject selectedCard;
 
+    public GameObject flower1;
+    public GameObject flower2;
+    public GameObject flower3;
+    public GameObject flower4;
 
+    private int growthLimitOne = 10;
+    private int growthLimitTwo = 50;
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +38,10 @@ public class DragDrop : MonoBehaviour
         DropZone2 = GameObject.Find("Plot_2_area");
         DropZone3 = GameObject.Find("Plot_3_area");
         DropZone4 = GameObject.Find("Plot_4_area");
-
+        flower1 = GameObject.Find("EntireFlower1");
+        flower2 = GameObject.Find("EntireFlower2");
+        flower3 = GameObject.Find("EntireFlower3");
+        flower4 = GameObject.Find("EntireFlower4");
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -100,7 +109,7 @@ public class DragDrop : MonoBehaviour
         {
             if (dropZone.tag == "PlotStats1" || dropZone.tag == "PlotStats2" || dropZone.tag == "PlotStats3" || dropZone.tag == "PlotStats4")
             {
-
+                
 
                 selectedCard.GetComponent<CardEffects>().doCardAction(selectedCard);
                 Debug.Log(Button.GetComponent<Draw_button>().CardsInHand);
@@ -124,13 +133,53 @@ public class DragDrop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (isDragging)
         {
             //follows the mouse position
             transform.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
             transform.SetParent(Canvas.transform, true);
         }
+
+        if (GameObject.Find("Plot_1_area").GetComponent<PlotStats1>().getPlotScore() >= growthLimitTwo)
+        {
+            ScaleHelper(flower1, DropZone1, 2.5f, 2.5f, 110);
+        }
+        else if (GameObject.Find("Plot_1_area").GetComponent<PlotStats1>().getPlotScore() >= growthLimitOne) {
+            ScaleHelper(flower1, DropZone1, 2, 2, 75);
+        }
+
+        if (GameObject.Find("Plot_2_area").GetComponent<PlotStats2>().getPlotScore() >= growthLimitTwo)
+        {
+            ScaleHelper(flower2, DropZone2, 2.5f, 2.5f, -20);
+        }
+        else if (GameObject.Find("Plot_2_area").GetComponent<PlotStats2>().getPlotScore() >= growthLimitOne)
+        {
+            ScaleHelper(flower2, DropZone2, 2, 2, -30);
+        }
+
+        if (GameObject.Find("Plot_3_area").GetComponent<PlotStats3>().getPlotScore() >= growthLimitTwo)
+        {
+            ScaleHelper(flower3, DropZone3, 2.5f, 2.5f, -20);
+        }
+        else if (GameObject.Find("Plot_3_area").GetComponent<PlotStats3>().getPlotScore() >= growthLimitOne)
+        {
+            ScaleHelper(flower3, DropZone3, 2, 2, -30);
+        }
+
+        if (GameObject.Find("Plot_4_area").GetComponent<PlotStats4>().getPlotScore() >= growthLimitTwo)
+        {
+            ScaleHelper(flower4, DropZone4, 2.5f, 2.5f, -20);
+        }
+        else if (GameObject.Find("Plot_4_area").GetComponent<PlotStats4>().getPlotScore() >= growthLimitOne)
+        {
+            ScaleHelper(flower4, DropZone4, 2, 2, -30);
+        }
+
     }
 
-    
+    private void ScaleHelper(GameObject go, GameObject dropZ, float scaleX, float scaleY, int transformY) {
+        go.transform.localScale = new Vector2(scaleX, scaleY);
+        go.transform.position = new Vector2(dropZ.transform.position.x, dropZ.transform.position.y + transformY);
+    }
 }
