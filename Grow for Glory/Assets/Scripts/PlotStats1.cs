@@ -16,14 +16,14 @@ public class PlotStats1 : MonoBehaviour
         //grabs the text compenet of the prot_total_1 game object
         plotTotal = GameObject.Find("plot_total_1").GetComponent<Text>();
         // sets the plot total text
-        plotTotal.text = "Plot Total: " + plotScore;
+        plotTotal.text = plotScore.ToString();
     }
 
     // Update is called once per frame
     void Update()
     {
         //sets the plot total text to display the plot score
-        plotTotal.text = "Plot Total: " + plotScore;
+        plotTotal.text = plotScore.ToString();
     }
 
     public void multiplyTotal(int multVal)
