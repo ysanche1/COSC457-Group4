@@ -134,7 +134,7 @@ public class DragDrop : MonoBehaviour
             */
             //reduces the number of card in hand by 1
 
-            Button.GetComponent<Draw_button>().RemoveCardInHand();
+            
             Debug.Log(Button.GetComponent<Draw_button>().CardsInHand);
             //destories the played card
 
