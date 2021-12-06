@@ -131,7 +131,7 @@ public class Draw_button : MonoBehaviour
         else
         {
             // We are now on day 7, end game
-            SceneManager.LoadScene("Scene_1");
+            SceneManager.LoadScene("End_screen");
 
             
         }
