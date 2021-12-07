@@ -229,7 +229,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Fertalizer
+  m_Text: Fertilizer
 --- !u!1 &7789376148755107977
 GameObject:
   m_ObjectHideFlags: 0
@@ -329,6 +329,10 @@ MonoBehaviour:
   Button: {fileID: 0}
   manaBar: {fileID: 0}
   dropZone: {fileID: 0}
+  flower1: {fileID: 0}
+  flower2: {fileID: 0}
+  flower3: {fileID: 0}
+  flower4: {fileID: 0}
 --- !u!114 &1386702554427861888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -431,6 +435,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4800ad8b89ba524ca746bacdc596f36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Button: {fileID: 0}
 --- !u!1 &8991614088436467192
 GameObject:
   m_ObjectHideFlags: 0

@@ -2746,6 +2746,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 647219341}
     m_Modifications:
+    - target: {fileID: 670255444105184780, guid: 1d1372178ee00fa47bf5ca77b3df7f8b,
+        type: 3}
+      propertyPath: m_Text
+      value: Caterpillar
+      objectReference: {fileID: 0}
     - target: {fileID: 4825797746142551514, guid: 1d1372178ee00fa47bf5ca77b3df7f8b,
         type: 3}
       propertyPath: m_Name

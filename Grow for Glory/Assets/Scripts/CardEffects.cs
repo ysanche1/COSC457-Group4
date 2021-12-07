@@ -288,7 +288,7 @@ public class CardEffects : MonoBehaviour
     }
     IEnumerator noManaWait(int time)
     {
-        noMana.text = "Insuficent Mana";
+        noMana.text = "Insufficient Mana";
         yield return new WaitForSeconds(time);
         noMana.text = "";
     }
